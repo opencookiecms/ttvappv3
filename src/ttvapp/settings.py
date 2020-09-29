@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ['localhost','127.0.0.1','192.168.0.125','192.168.0.114','intra.
 # Application definition
 
 INSTALLED_APPS = [
+    'dashapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
