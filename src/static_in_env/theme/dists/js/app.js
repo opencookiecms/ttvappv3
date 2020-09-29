@@ -237,7 +237,7 @@
             </div>
         </div>`;
 
-    $("body").append(settinghtml);
+    //$("body").append(settinghtml);
 
     $('.setting').on('click', function () {
         $('#settings').toggleClass('active');
