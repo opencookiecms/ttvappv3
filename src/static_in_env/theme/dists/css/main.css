@@ -5604,7 +5604,7 @@ path.domain {
 .horizontal-menu #header-fix .logo-bar {
     background: transparent;
     border-right: 1px solid var(--headerbordercolor);
-    width: 130px;
+    width: 160px;
 }
 
 @media (min-width: 992px) {

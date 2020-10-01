@@ -1,12 +1,13 @@
         {% load static %}
         <footer class="site-footer">
-            2020 © PICK
+            2020 © TTVISION
         </footer>
    
         <a href="#" class="scrollup text-center"> 
             <i class="icon-arrow-up"></i>
         </a>
     
+      
         <!-- START: Template JS-->
         <script src="{% static 'theme/dists/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
         <script src="{% static 'theme/dists/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
@@ -53,6 +54,20 @@
         <script src="{% static 'theme/dists/vendors/jquery-flot/jquery.flot.crosshair.js' %}"></script>
         <!-- END: Page Vendor JS-->
 
+               <!-- START: APP JS-->
+        <script src="{% static 'theme/dists/vendors/quill/quill.min.js'%}"></script>
+        <script src="{% static 'theme/dists/js/notes.script.js'%}"></script>
+        <!-- END: APP JS-
+
+        <!-- START: APP JS-->
+        <script src="{% static 'theme/dists/js/app.js'%}"></script>
+        <!-- END: APP JS-->
+       
         <!-- START: Page JS-->
         <script src="{% static 'theme/dists/js/home.script.js' %}"></script>
+        <script src="{% static 'node_modules/video.js/dist/video.js' %}"></script>
+        <script src="{% static 'node_modules/videojs-contrib-hls/dist/videojs-contrib-hls.js' %}"></script>
+     
+     
         <!-- END: Page JS-->
+

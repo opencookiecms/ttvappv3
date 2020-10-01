@@ -7,12 +7,17 @@ from django.conf import settings
 
 
 from dashapp.views import (
-    index
+    index,
+    cctv_dashboard,
+    cctv_cameragroup
+    
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index")
+    path('', index, name="index"),
+    path('cctv-dashboard', cctv_dashboard, name="cctv-dashboard"),
+    path('cctv-group/<int:group_id>', cctv_cameragroup, name="cctv-group")
 ]
 
 
