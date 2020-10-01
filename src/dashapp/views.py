@@ -22,3 +22,6 @@ def cctv_cameragroup(request, group_id):
         'title':'Camera Group :' 
     }
     return render (request, 'pages/discam_bygroup.html', context)
+
+def cctv(request):
+    return render(request, 'pages/cctv_view.html')
