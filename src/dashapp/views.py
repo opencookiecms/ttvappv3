@@ -18,6 +18,7 @@ def cctv_cameragroup(request, group_id):
 
     context = {
         'camera':Cameraset.objects.filter(camera_group=group_id),
+        'groupname': Cctvgroup.objects.get(id=group_id),
         'title':'Camera Group :' 
     }
     return render (request, 'pages/discam_bygroup.html', context)
