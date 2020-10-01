@@ -23,5 +23,9 @@ def cctv_cameragroup(request, group_id):
     }
     return render (request, 'pages/discam_bygroup.html', context)
 
-def cctv(request):
-    return render(request, 'pages/cctv_view.html')
+def cctv(request, cam_id):
+
+    context = {
+        'camera': Cameraset.objects.get(id=cam_id),
+    }
+    return render(request, 'pages/cctv_view.html',context)

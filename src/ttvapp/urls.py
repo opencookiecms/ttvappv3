@@ -19,7 +19,7 @@ urlpatterns = [
     path('', index, name="index"),
     path('cctv-dashboard', cctv_dashboard, name="cctv-dashboard"),
     path('cctv-group/<int:group_id>', cctv_cameragroup, name="cctv-group"),
-    path('cctv-view', cctv, name="cctv-view")
+    path('cctv-view/<int:cam_id>', cctv, name="cctv-view")
 ]
 
 
