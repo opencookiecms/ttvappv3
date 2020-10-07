@@ -149,14 +149,10 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <ul class="list-unstyled inbox-nav  mb-0 mt-2 notes-menu">
                                 <li class="nav-item"><a href="#" data-notetype="all" class="nav-link active"><i class="icon-envelope pr-2"></i> All Camera</a></li>                           
                             </ul>
                             <div class="eagle-divider"></div>
-                           
-
                         </div>
                     </div>
                    
@@ -168,25 +164,21 @@
                                 <div class="col-12  col-md-6 col-lg-4 note mb-3  all {{groupcam.cgroup_name}}" data-type="business-note">
                                     <div class="card" style="border:0px;">                            
                                         <div class="card-content">
-                                        
                                              <video id="my_video_1" class="video-js vjs-default-skin" controls autoplay width="296" height="200" 
                                                                 data-setup='{}'>
                                              <source src="{{cctv.camera_link2}}" type="application/x-mpegURL">
                                              </video>
-                                             <br>
-                                            
+                                             <br>   
                                                 <div class="d-flex notes-tool">
                                                     <h5 class="card-liner-subtitle text-dark font-weight-900">{{cctv.camera_name}}</h5>  
                                                     <div class="ml-auto">
                                                         <a class="text-primary" href=""><i class="fa fa-camera-retro"></i></a>                                 
                                                     </div>
-                                                </div>
-                                           
+                                                </div>         
                                         </div>
                                     </div>
                                 </div>
-                                 {% endfor %}
-                             
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
