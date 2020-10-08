@@ -1,0 +1,16 @@
+{% extends 'based/based.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="container">
+<video id="my_video_2" class="video-js vjs-default-skin" controls autoplay width="400" height="400"  data-setup='{}'>
+<source src="{{camera.camera_link1}}" type="application/x-mpegURL">
+</video>
+
+<canvas id="canvasOutput" width="320" height="240" ></canvas>
+
+</div>
+
+      
+{% endblock content %}

@@ -29,3 +29,11 @@ def cctv(request, cam_id):
         'camera': Cameraset.objects.get(id=cam_id),
     }
     return render(request, 'pages/cctv_view.html',context)
+
+def testcctv(request, cam_id):
+    
+    context = {
+        'camera': Cameraset.objects.get(id=cam_id),
+    }
+
+    return render(request, 'pages/v_test.html',context)

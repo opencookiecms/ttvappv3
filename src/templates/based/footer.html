@@ -6,7 +6,8 @@
         <a href="#" class="scrollup text-center"> 
             <i class="icon-arrow-up"></i>
         </a>
-    
+             <script async src="{% static 'opencv/opencv.js' %}" onload="onOpenCvReady();" onerror="onOpenCvError();" id="opencvjs"></script>
+        <script src="{% static 'opencv/utils.js' %}"></script>
       
         <!-- START: Template JS-->
         <script src="{% static 'theme/dists/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
@@ -67,14 +68,13 @@
         <script src="{% static 'theme/dists/js/home.script.js' %}"></script>
         <script src="{% static 'node_modules/video.js/dist/video.js' %}"></script>
         <script src="{% static 'node_modules/videojs-contrib-hls/dist/videojs-contrib-hls.js' %}"></script>
-
+         
         <!--opencv-->
+   
         <script src="{% static 'theme/dists/js/home.script.js' %}"></script>
-        <script src="{% static 'opencv/myopencv.js' %}"></script>
-        <script async src="{% static 'opencv/opencv.js' %}" onload="onCvLoaded;" type="text/javascript"></script>
-     
-        
-     <script>
-</script>
+       
+        <script src="{% static 'opencv/testopencv.js' %}"></script>
+
+
         <!-- END: Page JS-->
 

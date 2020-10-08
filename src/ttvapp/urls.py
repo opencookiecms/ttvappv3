@@ -10,7 +10,8 @@ from dashapp.views import (
     index,
     cctv_dashboard,
     cctv_cameragroup,
-    cctv
+    cctv,
+    testcctv
     
 )
 
@@ -19,7 +20,8 @@ urlpatterns = [
     path('', index, name="index"),
     path('cctv-dashboard', cctv_dashboard, name="cctv-dashboard"),
     path('cctv-group/<int:group_id>', cctv_cameragroup, name="cctv-group"),
-    path('cctv-view/<int:cam_id>', cctv, name="cctv-view")
+    path('cctv-view/<int:cam_id>', cctv, name="cctv-view"),
+    path('cctv-for/<int:cam_id>', testcctv, name="cctv-for")
 ]
 
 
