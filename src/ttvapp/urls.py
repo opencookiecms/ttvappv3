@@ -11,7 +11,8 @@ from dashapp.views import (
     cctv_dashboard,
     cctv_cameragroup,
     cctv,
-    testcctv
+    testcctv,
+    image_feed
     
 )
 
@@ -21,7 +22,8 @@ urlpatterns = [
     path('cctv-dashboard', cctv_dashboard, name="cctv-dashboard"),
     path('cctv-group/<int:group_id>', cctv_cameragroup, name="cctv-group"),
     path('cctv-view/<int:cam_id>', cctv, name="cctv-view"),
-    path('cctv-for/<int:cam_id>', testcctv, name="cctv-for")
+    path('cctv-for/<int:cam_id>', testcctv, name="cctv-for"),
+    path('image-feed/<int:id>', image_feed, name="image-feed")
 ]
 
 
