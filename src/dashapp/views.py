@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import cv2
 import sys
+import numpy as np
+import face_recognition
 from vidgear.gears import CamGear
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError
 from .cameraObj import cameraobject
