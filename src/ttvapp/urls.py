@@ -24,6 +24,7 @@ urlpatterns = [
     path('cctv-view/<int:cam_id>', cctv, name="cctv-view"),
     path('cctv-for/<int:cam_id>', testcctv, name="cctv-for"),
     path('image-feed/<int:id>', image_feed, name="image-feed")
+    
 ]
 
 
