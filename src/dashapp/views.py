@@ -60,7 +60,7 @@ def grab_cctv(id):
 def frame_renderer(id):
 
     camr = grab_cctv(id)
-    cap = cv2.VideoCapture(camr)
+    cap = cv2.VideoCapture("")
     time.sleep(2.0)
     sub = cv2.createBackgroundSubtractorMOG2()
 
@@ -92,7 +92,6 @@ def frame_renderer(id):
             continue
         if ret:
             image = cv2.resize(frame, (0, 0), None, 1, 1)  # resize image
-
 
             if(camera.camera_detection == 1):
 
@@ -158,3 +157,31 @@ def testcctv(request, cam_id):
         'camera': Cameraset.objects.get(id=cam_id),
     }
     return render(request, 'pages/v_test.html',context)
+
+
+#this is project section
+
+def projectlist(request):
+    context = {
+        'projectlist':Ttvproject.objects.all()
+    }
+    return render(request, 'pages/project-list.html',context)
+
+#end of project section
+
+#this is camera-list section
+
+def cameralist(request):
+    context = {
+        'cameralist':Cameraset.objects.all()
+    }
+    return render(request, 'pages/camera-list')
+#end of camera list section
+
+#cell section in here
+def celldashboard(request):
+    context = {
+        'cell':Ttvcell.objects.all()
+    }
+    return render(request, 'pages/cell-dashboard.html')
+#end of cell section

@@ -176,22 +176,20 @@
                                                     <div class='d-flex px-0 px-lg-2 py-2 align-self-center'>
                                                       <i class="icon-camera icons card-liner-icon mt-2"></i>
                                                         <div class='card-liner-content'>
-                                                            <h2 class="card-liner-title">{{groupcam.cgroup_much}}</h2>
-                                                        
-                                                             <h6 class="card-liner-subtitle">Total's Camera</h6>  
-                                                                                                 
+                                                            <h2 class="card-liner-title">{{groupcam.cgroup_much}}</h2>              
+                                                             <h6 class="card-liner-subtitle">Total's Camera</h6>                                                 
                                                         </div>                                
                                                     </div>
                                                 <div class="d-flex notes-tool"> 
                                                     <div class="ml-auto">
-                                                        <a class="text-primary" href="{% url 'cctv-group' group_id=groupcam.id %}"><i class="far fa-eye fa-lg"></i></a>                                 
+                                                        <a class="text-primary" href="{% url 'cctv/group' group_id=groupcam.id %}"><i class="far fa-eye fa-lg"></i></a>                                 
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                 {% endfor %}   
+                                {% endfor %}   
                             </div>
                         </div>
                     </div>
