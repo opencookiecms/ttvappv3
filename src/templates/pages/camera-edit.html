@@ -1,0 +1,147 @@
+{% extends 'based/based.html' %}
+{% block content %}
+        <!-- START: Main Content-->
+        <main>
+            <div class="container-fluid site-width">
+                <!-- START: Breadcrumbs-->
+                <div class="row ">
+                    <div class="col-12  align-self-center">
+                        <div class="sub-header mt-3 py-3 align-self-center d-sm-flex w-100 rounded">
+                            <div class="w-sm-100 mr-auto"><h4 class="mb-0">Camera Form Section</h4></div>
+
+                            <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
+                                <li class="breadcrumb-item">Home</li>
+                                <li class="breadcrumb-item">Form</li>
+                                <li class="breadcrumb-item active"><a href="#">Basic</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Breadcrumbs-->
+
+                <!-- START: Card Data-->
+                <div class="row">
+                    <div class="col-8 mt-4">
+                        <div class="card">
+                            <div class="card-header">                               
+                                <h6 class="card-title">Input Camera Details</h6>                                
+                            </div>
+                            <div class="card-content">
+                                <div class="card-body">
+                                    <div class="row">                                           
+                                        <div class="col-12">
+                                            <form action='.' method='POST'>
+                                            {% csrf_token %}
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-10">
+                                                        <label for="">Camara Name</label>
+                                                        {{form.camera_name}}
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">Camera No</label>
+                                                        {{form.camera_no}}
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Camera Link 1</label>
+                                                    {{form.camera_link1}}
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="">Camera Link 2</label>
+                                                    {{form.camera_link2}}
+                                                </div>
+                                                <h6 class="card-title">(Optional)</h6>   
+                                                
+                                                 <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                        <label for="">Camara Main Id</label>
+                                                        {{form.camera_main}}
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                        <label for="">Camera Slave Id</label>
+                                                        {{form.camera_slave}}
+                                                    </div>
+                                                </div>
+                                                <h6 class="card-title">ROI or Overlays</h6>   
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">x1</label>
+                                                        {{form.camera_point1x}}
+                                                    </div>
+                                                   <div class="form-group col-md-2">
+                                                        <label for="">y1</label>
+                                                        {{form.camera_point1y}}
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">x2</label>
+                                                        {{form.camera_point2x}}
+                                                    </div>
+                                                   <div class="form-group col-md-2">
+                                                        <label for="">y2</label>
+                                                        {{form.camera_point2y}}
+                                                    </div>
+                                                   
+                                                  
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">x3</label>
+                                                        {{form.camera_point3x}}
+                                                    </div>
+                                                   <div class="form-group col-md-2">
+                                                        <label for="">y3</label>
+                                                        {{form.camera_point3y}}
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">x4</label>
+                                                        {{form.camera_point4x}}
+                                                    </div>
+                                                   <div class="form-group col-md-2">
+                                                        <label for="">y4</label>
+                                                        {{form.camera_point4y}}
+                                                    </div>
+                                                   
+                                                  
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">Overlay</label>
+                                                        {{form.camera_overlay}}
+                                                    </div>
+                                                   <div class="form-group col-md-2">
+                                                        <label for="">Annotation</label>
+                                                        {{form.camera_annotation}}
+                                                    </div>
+                                                    <div class="form-group col-md-2">
+                                                        <label for="">Detector</label>
+                                                        {{form.camera_detection}}
+                                                    </div>  
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="">Group</label>
+                                                        {{form.camera_group}}
+                                                    </div> 
+                                                </div>
+                                                 <div class="form-row">
+                                                    <div class="form-group col-md-4">
+                                                        <label for="">View on Cell</label>
+                                                        {{form.camera_cell_tag}}
+                                                    </div> 
+                                                </div>
+                                        
+                                                <button type="submit" class="btn btn-info">Save</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <!-- END: Card DATA-->
+            </div>
+        </main>
+        <!-- END: Content-->
+{% endblock content %}

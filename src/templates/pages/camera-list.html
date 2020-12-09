@@ -32,30 +32,33 @@
                                         <thead>
                                             <tr>
                                                 <th>No#</th>
-                                                <th>Project Name</th>
-                                                <th>Company</th>
-                                                <th>Model</th>
-                                                <th>Start Date</th>
-                                                <th>End Date</th>
+                                                <th>Camera Name</th>
+                                                <th>link 1</th>
+                                                <th>link 2</th>
+                                                <th>Group</th>
                                                 <th>Status</th>
-                                                <th class="text-right">Action</th>
+                                                <th class="">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                           {% for row in cameralist %}
                                             <tr>
-                                                <td>{{row.id}}</td>
-                                                <td>{{row.p_name}}</td>
-                                                <td>{{row.p_company}}</td>
-                                                <td>{{row.p_model}}</td>
-                                                <td>{{row.p_startdate}}</td>
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{row.camera_name}}</td>
+                                                <td>{{row.camera_link1}}</td>
+                                                <td>{{row.camera_link2}}</td>
+                                              
                                                 <td>
-                                                    {{row.p_enddate}}
+                                                    {{row.camera_group.cgroup_name}}
                                                 </td>
                                                 <td>
-                                                    {{row.p_status}}
+                                                    UP
                                                 </td>
-                                                <td class="text-right"><a href="" class="btn btn-outline-warning btn-rounded btn-uppercase"><i class="ti-settings m-r-5"></i>Manage</a></td>
+                                                <td class="">
+                                                  <a href="" class="btn btn-outline-info btn-rounded btn-uppercase"><i class="far fa-eye"></i></a>
+                                                  <a href="{% url 'camera/edit' row.id %}" class="btn btn-outline-warning btn-rounded btn-uppercase"><i class="far fa-edit"></i></a>
+                                                  <a href="{% url 'camera/remove' row.id %}" class="btn btn-outline-danger btn-rounded btn-uppercase"><i class="ti-settings m-r-5"></i>X</a>
+                                                </td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>

@@ -13,7 +13,11 @@ from dashapp.views import (
     testcctv,
     image_feed,
     projectlist,
-    celldashboard
+    celldashboard,
+    cameralist,
+    cameraadd,
+    cameraedit,
+    cameraremove,
     
 )
 
@@ -24,9 +28,14 @@ urlpatterns = [
     path('cctv/group/<int:group_id>', cctv_cameragroup, name="cctv/group"),
     path('cctv/view/<int:cam_id>', cctv, name="cctv/view"),
     path('cctv/for/<int:cam_id>', testcctv, name="cctv/for"),
+    path('camera/list', cameralist, name="camera/list"),
+    path('camera/add', cameraadd, name="camera/add"),
+    path('camera/edit/<int:id>/',cameraedit, name="camera/edit"),
+    path('camera/remove/<int:id>/',cameraremove, name="camera/remove"),
     path('image-feed/<int:id>', image_feed, name="image-feed"),
     path('project/listing', projectlist, name="project/listing"),
-    path('cell/dashboard', celldashboard, name="cell/dashboard'")
+    path('cell/dashboard', celldashboard, name="cell/dashboard"),
+
     
 ]
 

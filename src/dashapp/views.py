@@ -5,13 +5,14 @@ import time
 import imutils
 import numpy as np
 import face_recognition
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404, redirect, reverse
 from vidgear.gears import CamGear
 from .cameraObj import cameraobject
 from django.conf.urls.static import static
 from django.conf import settings
 from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerError
 from .models import Ttvproject,Ttvcell,Cctvgroup,Cameraset,Cctvline,InventoryProduct,Groupcell
+from .forms import CameraForm
 
 base_dir = settings.BASE_DIR
 
@@ -169,13 +170,55 @@ def projectlist(request):
 
 #end of project section
 
-#this is camera-list section
+#this is camera section
 
 def cameralist(request):
     context = {
         'cameralist':Cameraset.objects.all()
     }
-    return render(request, 'pages/camera-list')
+    return render(request, 'pages/camera-list.html',context)
+
+def cameraadd(request):
+
+    form = CameraForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = CameraForm()
+    else:
+        print(form)
+        print('the data was not save')
+
+    data = {
+      'msg':"the data not save" ,
+      'form':form
+    }
+
+    return render(request, 'pages/camera-add.html',data)
+
+def cameraedit(request, id):
+    dataobject = Cameraset.objects.get(id=id)
+    form = CameraForm(request.POST or None, instance=dataobject)
+    if form.is_valid():
+        form.save()
+    else:
+        print('data was no save')
+        print(form)
+    
+    data = {
+        'form':form
+    }
+
+    return render(request, 'pages/camera-edit.html',data)
+
+def cameraremove(request, id):
+    dataobject = Cameraset.objects.get(id=id)
+    dataobject.delete()
+
+    if dataobject:
+        return redirect('camera/list')
+    else:
+        return render(request, 'pages/camera-list.html')
+
 #end of camera list section
 
 #cell section in here
