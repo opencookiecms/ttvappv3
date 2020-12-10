@@ -18,6 +18,7 @@ from dashapp.views import (
     cameraadd,
     cameraedit,
     cameraremove,
+    conferenceRoom,
     
 )
 
@@ -35,8 +36,8 @@ urlpatterns = [
     path('image-feed/<int:id>', image_feed, name="image-feed"),
     path('project/listing', projectlist, name="project/listing"),
     path('cell/dashboard', celldashboard, name="cell/dashboard"),
-
-    
+    path('room/conference', conferenceRoom,  name="room/conference"),
+ 
 ]
 
 

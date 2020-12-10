@@ -1,0 +1,57 @@
+{% extends 'based/based.html' %}
+{% block content %}
+        <main>
+            <div class="container-fluid site-width">
+                <!-- START: Breadcrumbs-->
+                <div class="row">
+                    <div class="col-12  align-self-center">
+                        <div class="sub-header mt-3 py-3 px-md-0 align-self-center d-sm-flex w-100 rounded">
+                            <div class="w-sm-100 mr-auto"><h4 class="mb-0">Conference Room</h4> <p>Welcome</p>
+                                <a href="#" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a> 
+                            </div>
+          
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Breadcrumbs-->
+
+                <!-- START: Card Data-->
+                <div class="row">
+              
+        
+                </div>
+                <!-- END: Card DATA-->  
+
+                <!-- START: Card Data-->
+                <div class="row mb-4">
+                      <form>
+                        <label for="username">Name: </label>
+                        <input type="text" name=”username” id="username">
+                        <button id="join_leave">Join call</button>
+                        <button id="share_screen" disabled>Share screen</button>
+                        <button id="toggle_chat" disabled>Toggle chat</button>
+                     </form>
+                
+                    <p id="count">Disconnected.</p>
+                        <div id="root">
+                            <div id="container" class="container">
+                                <div id="local" class="participant"><div></div><div class="label">Me</div></div>
+                                <!-- more participants will be added dynamically here -->
+                            </div>
+                            <div id="chat">
+                                <div id="chat-scroll">
+                                    <div id="chat-content">
+                                        <!-- chat content will be added dynamically here -->
+                                    </div>
+                                </div>
+                                <input id="chat-input" type="text">
+                        </div>
+                    </div>
+              
+      
+    
+                </div>
+                <!-- END: Card DATA-->                   
+            </div>
+        </main>
+{% endblock content %}
