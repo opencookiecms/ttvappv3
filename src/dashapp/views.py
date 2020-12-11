@@ -14,10 +14,6 @@ from django.http import StreamingHttpResponse, HttpResponse, HttpResponseServerE
 from .models import Ttvproject,Ttvcell,Cctvgroup,Cameraset,Cctvline,InventoryProduct,Groupcell
 from .forms import CameraForm
 
-from twilio.jwt.access_token import AccessToken
-from twilio.jwt.access_token.grants import VideoGrant, ChatGrant
-from twilio.rest import Client
-from twilio.base.exceptions import TwilioRestException
 
 base_dir = settings.BASE_DIR
 
