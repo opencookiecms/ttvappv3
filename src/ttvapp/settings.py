@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '6yndfg=te5-(b(e(qe7m38t+^-pmr73(!lc!^i5(*7m@z5qa$a'
 
-TWILIO_ACCOUNT_SID = 'AC3be047d9eaf3d710e931199843a9c966'
-TWILIO_API_KEY_SID= 'SKb0ffa74c7ca6ec17989987eaea216429'
-TWILIO_API_KEY_SECRET= 'raVvrRB1xU5pEO3B0gLT36zndaot4H4S'
+TWILIO_ACCOUNT_SID = ''
+TWILIO_API_KEY_SID= ''
+TWILIO_API_KEY_SECRET= ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
