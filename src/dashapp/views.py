@@ -3,6 +3,9 @@ import sys
 import os
 import time
 import imutils
+import subprocess
+import wmi
+import platform
 import numpy as np
 import face_recognition
 from django.shortcuts import render, get_list_or_404, redirect, reverse
@@ -18,13 +21,6 @@ from .forms import CameraForm
 base_dir = settings.BASE_DIR
 
 
-def get_chatroom(name):
-    for conversation in twilio_client.conversations.conversations.list():
-        if conversation.friendly_name == name:
-            return conversation
-
-    return twilio_client.conversations.conversations.create(
-        friendly_name=name)
 
 # Create your views here.
 def index(request):
@@ -239,22 +235,18 @@ def celldashboard(request):
     return render(request, 'pages/cell-dashboard.html')
 #end of cell section
 
-def conferenceRoom(request):
+def getpcinfomation(request):
 
-    if request.method == 'POST':
-        username = request.get_json(force=True).get('username')
-        if not username:
-            abort(401)
-        conversation = get_chatroom('My Room')
-        try:
-            conversation.participants.create(identity=username)
-        except TwilioRestException as exc:
-            if exc.status != 409:
-                raise
-        token = AccessToken(twilio_account_sid, twilio_api_key_sid,twilio_api_key_secret, identity=username)
-        token.add_grant(VideoGrant(room='My Room'))
-        token.add_grant(ChatGrant(service_sid=conversation.chat_service_sid))
-        return {'token': token.to_jwt().decode(),'conversation_sid': conversation.sid}
+    ostype = sys.platform.lower()
+    x = subprocess.check_output('wmic bios get serialnumber').decode('utf-8').split()[1]
 
-    return render(request, 'pages/conference.html')
+    if "win" in ostype:
+        command = os.popen("wmic bios get serialnumber").read().split()[2]
+
+
+
+    context = {
+        'pcserialno': x,
+    }
+    return render(request, 'pages/pcinformation.html',context )
 
