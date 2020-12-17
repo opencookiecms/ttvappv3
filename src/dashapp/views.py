@@ -18,14 +18,6 @@ from .forms import CameraForm
 base_dir = settings.BASE_DIR
 
 
-def get_chatroom(name):
-    for conversation in twilio_client.conversations.conversations.list():
-        if conversation.friendly_name == name:
-            return conversation
-
-    return twilio_client.conversations.conversations.create(
-        friendly_name=name)
-
 # Create your views here.
 def index(request):
     return render(request, 'pages/maindashboard.html')
@@ -71,7 +63,7 @@ def grab_cctv(id):
 def frame_renderer(id):
 
     camr = grab_cctv(id)
-    cap = cv2.VideoCapture("")
+    cap = cv2.VideoCapture(camr)
     time.sleep(2.0)
     sub = cv2.createBackgroundSubtractorMOG2()
 
