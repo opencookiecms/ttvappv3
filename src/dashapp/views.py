@@ -4,7 +4,7 @@ import os
 import time
 import imutils
 import subprocess
-import wmi
+#import wmi
 import platform
 import numpy as np
 import face_recognition
